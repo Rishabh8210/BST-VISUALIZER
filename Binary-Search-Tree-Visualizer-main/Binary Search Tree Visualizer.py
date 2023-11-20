@@ -1,7 +1,7 @@
                                 # BINARY SEARCH TREE VISUALIZER #
 from tkinter import *
 from tkinter import messagebox
-import time
+import time # Please give the right path here of Circular_queue.py
 
 # 4 level only allowed for this application
 # node[5] similar to node.left and node[6] similar to node.right
@@ -95,6 +95,9 @@ class BST:
 
         self.level_order_traversal = Button(make_label_frame_for_traversing, text="Level-order Display", font=("Arial", 10, "bold"), bg="black", fg="#00FF00", relief=RAISED, bd=8, command=lambda: self.traversing_decision_making(4), state=NORMAL)
         self.level_order_traversal.pack(padx=3, pady=5)
+
+        self.level_order_display = Button(make_label_frame_for_traversing)
+        # self.level_order_display.pack(padx=3, pady=5)
         # Delete Button
         self.make_delete = Button(self.window, text="Delete", font=("Arial", 16, "bold"), bg="black", fg="#00FF00", relief=RAISED, bd=8, command=lambda: self.take_input_set_up(2), state=NORMAL)
         self.make_delete.place(x=1220,y=470)
@@ -497,7 +500,53 @@ class BST:
         self.status_note = Label(self.result_canvas,bg="#FF8C00",fg="blue",text="Play With BST",font=("Arial",20,"bold","italic"))
         self.status_note.place(x=530,y=130)
 
-    
+    # def level_order_concept_by_queue(self):# With Circular Queue Concept
+    #     try:
+    #         top = Toplevel()
+    #         top.config(bg="orange")
+    #         top.geometry("1080x600")
+    #         top.maxsize(1080, 600)
+    #         top.minsize(1080, 600)
+    #         top.iconbitmap("bst_icon.ico")
+    #         queue_obj = CQ.CircularQueue(top)
+    #         node_data_store_to_access_easily = []
+    #         node_data_store_to_access_easily.append(self.node_number_value_store[0])
+    #         queue_obj.box_insert(self.node_number_value_store[0][2])
+    #         i=-1
+
+    #         while True:
+    #             if  len(queue_obj.value_store) == 0:
+    #                 queue_obj.status_label['text'] = "All node value printed here and the queue is empty"
+    #                 break
+    #             else:
+    #                 take = node_data_store_to_access_easily.pop(0)
+    #                 top.update()
+    #                 time.sleep(2)
+
+    #                 if take[5] is not None:
+    #                    queue_obj.status_label['text'] = "The left child of the front pointing node is inserted"
+    #                    node_data_store_to_access_easily.append(take[5])
+    #                    queue_obj.box_insert(take[5][2])
+    #                    top.update()
+    #                    time.sleep(2)
+    #                 if take[6] is not None:
+    #                    queue_obj.status_label['text'] = "The right child of the front pointing node is inserted"
+    #                    node_data_store_to_access_easily.append(take[6])
+    #                    queue_obj.box_insert(take[6][2])
+    #                    top.update()
+    #                    time.sleep(2)
+
+    #                 queue_obj.status_label['text'] = "Front pointing node value printed here and get deleted from Queue"
+    #                 i += 1
+    #                 queue_obj.value_show[i].config(text=take[2])
+    #                 queue_obj.deletion()
+    #                 top.update()
+
+    #         top.mainloop()
+
+    #     except:
+    #         print("Some force stop error")
+
     def delete(self):# For node deletion
         val = self.take_entry.get()
         p_node = None
