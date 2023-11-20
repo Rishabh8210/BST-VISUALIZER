@@ -2,7 +2,6 @@
 from tkinter import *
 from tkinter import messagebox
 import time
-import Circular_queue as CQ # Please give the right path here of Circular_queue.py
 
 # 4 level only allowed for this application
 # node[5] similar to node.left and node[6] similar to node.right
